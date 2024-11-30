@@ -9,8 +9,18 @@ body {
   width: 100%;
   background-color: #334155;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   font-family: sans-serif;
+}
+/* form */
+.form {
+  border: 1px solid #777776;
+  border-radius: 10px;
+  height: 50%;
+  width: 80%;
+  background-color: #ffffff8e;
+  border-radius: 10px;
 }
 
 /* BookShelf */
@@ -81,4 +91,8 @@ body {
   margin-top: 20px;
   background-color: #3341559c;
   color: rgb(235, 235, 235);
+  cursor: pointer;
+}
+#Del:hover {
+  background-color: #334155de;
 }

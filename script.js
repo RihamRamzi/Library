@@ -52,12 +52,20 @@ function displayBook() {
         statusSpan.id = "read";
       }
     });
+    // Del btn
+    const delBtn = document.createElement("button");
+    delBtn.textContent = `Remove`;
+    delBtn.id = "Del";
+    delBtn.addEventListener("click", () => {
+      bookCover.remove();
+    });
 
     bookCover.appendChild(title);
     bookCover.appendChild(author);
     bookCover.appendChild(pages);
     read.appendChild(statusSpan);
     bookCover.appendChild(read);
+    bookCover.appendChild(delBtn);
     bookShelf.appendChild(bookCover);
   }
 }
