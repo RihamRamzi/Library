@@ -51,6 +51,29 @@ body {
 #P {
   margin-top: 30px;
 }
+#R {
+  height: 15px;
+  overflow: hidden;
+}
+#status,
+#read,
+#notRead {
+  cursor: pointer;
+}
+#read::after {
+  content: "✔️";
+  padding: 2px;
+  font-size: 11px;
+  align-self: center;
+  cursor: pointer;
+}
+#notRead::after {
+  content: "❌";
+  position: relative;
+  top: -1px;
+  font-size: 11px;
+  cursor: pointer;
+}
 #Del {
   border-radius: 10px;
   border: none;
