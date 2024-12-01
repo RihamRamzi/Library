@@ -14,14 +14,18 @@ function addBookToLibrary(title, author, pages) {
   myLibrary.push(book);
 }
 
-addBookToLibrary("GOT", "IDK", 100);
-addBookToLibrary("LOL", "IDK", 100);
-
 const bookShelf = document.querySelector(".bookShelf");
 const addBook = document.querySelector("#addBook");
 const form = document.querySelector(".form");
+// form input
+const title = document.querySelector("#title");
+const author = document.querySelector("#author");
+const pages = document.querySelector("#pages");
+// create Btn
+const createBook = document.querySelector("#add");
 
 function displayBook() {
+  bookShelf.textContent = "";
   for (let book of myLibrary) {
     // created book
     const bookCover = document.createElement("div");
@@ -77,4 +81,13 @@ function displayBook() {
 //   addBook.style.display = "none";
 // });
 
-displayBook();
+// create book function
+createBook.addEventListener("click", (event) => {
+  event.preventDefault();
+  const bookTitle = title.value;
+  const bookAuthor = author.value;
+  const bookPages = pages.value;
+
+  addBookToLibrary(bookTitle, bookAuthor, bookPages);
+  displayBook();
+});
