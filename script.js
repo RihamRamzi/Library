@@ -55,7 +55,7 @@ function displayBook() {
     // Del btn
     const delBtn = document.createElement("button");
     delBtn.textContent = `Remove`;
-    delBtn.id = "Del";
+    delBtn.classList.add("Btn");
     delBtn.addEventListener("click", () => {
       bookCover.remove();
     });

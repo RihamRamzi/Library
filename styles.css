@@ -30,17 +30,33 @@ form {
   width: 63%;
   height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   padding: 20px;
   color: rgba(255, 255, 255, 0.76);
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+}
+.right {
+  width: 20%;
+  height: 80%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.right button {
+  height: 100%;
+  width: 60%;
 }
 
 input {
   border: none;
   outline: none;
   border-radius: 5px;
-  width: 50%;
+  width: 100%;
   padding: 10px;
   font-weight: 600;
   font-size: 1.2em;
@@ -62,6 +78,7 @@ label {
   font-weight: 600;
   font-size: 2em;
   cursor: pointer;
+  text-align: center;
 }
 
 /* BookShelf */
@@ -123,7 +140,7 @@ label {
   font-size: 11px;
   cursor: pointer;
 }
-#Del {
+.Btn {
   border-radius: 10px;
   border: none;
   padding: 10px;
@@ -133,6 +150,6 @@ label {
   font-family: Papyrus, fantasy;
   cursor: pointer;
 }
-#Del:hover {
+.Btn:hover {
   background-color: #334155de;
 }
