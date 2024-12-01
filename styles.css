@@ -13,6 +13,18 @@ body {
   flex-direction: column;
   font-family: Papyrus, fantasy;
 }
+/* ADD BOOK */
+#addBook {
+  background-color: #436ad493;
+  width: 50%;
+  height: 10%;
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+#addBook:hover {
+  background-color: #436ad450;
+}
 /* form */
 .form {
   border-radius: 10px;
@@ -24,6 +36,7 @@ body {
   border: 2px solid;
   display: flex;
   justify-content: center;
+  display: none;
 }
 form {
   background-color: rgba(255, 255, 255, 0.192);
