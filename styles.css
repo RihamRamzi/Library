@@ -21,6 +21,7 @@ body {
   font-size: 30px;
   font-weight: 900;
   margin-bottom: 20px;
+  display: none;
 }
 #addBook:hover {
   background-color: #436ad450;
@@ -36,7 +37,7 @@ body {
   border: 2px solid;
   display: flex;
   justify-content: center;
-  display: none;
+  box-shadow: inset 0px 1px 15px 9px;
 }
 form {
   background-color: rgba(255, 255, 255, 0.192);
@@ -46,6 +47,7 @@ form {
   align-items: center;
   padding: 20px;
   color: rgba(255, 255, 255, 0.76);
+  box-shadow: inset 0px 1px 15px 9px black;
 }
 .left {
   display: flex;
@@ -96,7 +98,6 @@ label {
 
 /* BookShelf */
 .bookShelf {
-  border: 1px solid #777776;
   width: 50%;
   height: 52%;
   display: flex;
@@ -107,7 +108,7 @@ label {
   gap: 20px;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: inset 0px 0px 4px 6px #ffffff4a;
+  box-shadow: inset 0px 1px 15px 9px black;
 }
 .book {
   width: 150px;

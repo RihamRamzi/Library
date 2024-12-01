@@ -18,6 +18,8 @@ addBookToLibrary("GOT", "IDK", 100);
 addBookToLibrary("LOL", "IDK", 100);
 
 const bookShelf = document.querySelector(".bookShelf");
+const addBook = document.querySelector("#addBook");
+const form = document.querySelector(".form");
 
 function displayBook() {
   for (let book of myLibrary) {
@@ -69,5 +71,10 @@ function displayBook() {
     bookShelf.appendChild(bookCover);
   }
 }
+
+// addBook.addEventListener("click", () => {
+//   form.style.display = "flex";
+//   addBook.style.display = "none";
+// });
 
 displayBook();
