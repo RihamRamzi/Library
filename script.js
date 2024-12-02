@@ -40,7 +40,7 @@ function displayBook() {
     // created Author
     const author = document.createElement("span");
     author.id = "A";
-    author.textContent = book.author;
+    author.textContent = `By ${book.author}`;
     // created pages
     const pages = document.createElement("span");
     pages.id = "P";
