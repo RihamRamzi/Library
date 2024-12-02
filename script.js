@@ -11,6 +11,8 @@ const createBook = document.querySelector("#add");
 const bookForm = document.querySelector("#form");
 // read the book
 const readC = document.querySelector("#readC");
+// close BTN
+const closeBtn = document.querySelector("#close");
 
 const myLibrary = [];
 
@@ -101,6 +103,7 @@ addBook.addEventListener("click", () => {
   addBook.style.display = "none";
   readC.id = "readC";
   readC.textContent = "NO";
+  closeBtn.style.display = "block";
 });
 
 // create book function
@@ -116,6 +119,7 @@ bookForm.addEventListener("submit", (event) => {
   bookForm.reset();
   addBook.style.display = "block";
   form.style.display = "none";
+  closeBtn.style.display = "none";
 });
 
 // button read
@@ -127,4 +131,11 @@ readC.addEventListener("click", () => {
     readC.textContent = "NO";
     readC.id = "readC";
   }
+});
+
+// close BTN
+closeBtn.addEventListener("click", (event) => {
+  form.style.display = "none";
+  closeBtn.style.display = "none";
+  addBook.style.display = "block";
 });
