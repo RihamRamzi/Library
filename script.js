@@ -91,7 +91,7 @@ addBook.addEventListener("click", () => {
 });
 
 // create book function
-createBook.addEventListener("click", (event) => {
+bookForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const bookTitle = title.value;
   const bookAuthor = author.value;

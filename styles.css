@@ -21,6 +21,7 @@ body {
   font-size: 30px;
   font-weight: 900;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 #addBook:hover {
   background-color: #436ad450;
@@ -102,7 +103,7 @@ label {
 /* BookShelf */
 .bookShelf {
   width: 50%;
-  height: 52%;
+  height: clamp(52%, 90%, 90%);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -170,6 +171,7 @@ label {
   color: rgb(235, 235, 235);
   font-family: Papyrus, fantasy;
   cursor: pointer;
+  margin-top: auto;
 }
 .Btn:hover {
   background-color: #334155de;
