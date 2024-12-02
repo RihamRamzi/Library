@@ -9,20 +9,23 @@ const pages = document.querySelector("#pages");
 const createBook = document.querySelector("#add");
 // form
 const bookForm = document.querySelector("#form");
+// read the book
+const readC = document.querySelector("#readC");
 
 const myLibrary = [];
 
-function Book(title, author, pages) {
+function Book(title, author, pages, checked) {
   this.title = title;
   this.author = author;
   this.pages = pages;
+  this.checked = checked;
   this.info = function () {
     return `${title} by ${author},${pages} pages`;
   };
 }
 
-function addBookToLibrary(title, author, pages) {
-  const book = new Book(title, author, pages);
+function addBookToLibrary(title, author, pages, checked) {
+  const book = new Book(title, author, pages, checked);
   myLibrary.push(book);
 }
 
@@ -50,17 +53,25 @@ function displayBook() {
     read.textContent = `Read:`;
     read.id = "R";
     const statusSpan = document.createElement("span");
-    statusSpan.textContent = ` Click`;
-    statusSpan.id = "status";
+    if (book.checked == true) {
+      statusSpan.textContent = " Yes";
+      statusSpan.id = "read";
+    } else {
+      statusSpan.textContent = " No";
+      statusSpan.id = "notRead";
+    }
     statusSpan.addEventListener("click", () => {
       if (statusSpan.textContent == " Yes") {
         statusSpan.textContent = " No";
         statusSpan.id = "notRead";
+        book.checked = false;
       } else {
         statusSpan.textContent = " Yes";
         statusSpan.id = "read";
+        book.checked = true;
       }
     });
+
     // Del btn
     const delBtn = document.createElement("button");
     delBtn.textContent = `Remove`;
@@ -96,8 +107,10 @@ bookForm.addEventListener("submit", (event) => {
   const bookTitle = title.value;
   const bookAuthor = author.value;
   const bookPages = pages.value;
+  const checked = readC.checked;
+  console.log(checked);
 
-  addBookToLibrary(bookTitle, bookAuthor, bookPages);
+  addBookToLibrary(bookTitle, bookAuthor, bookPages, checked);
   displayBook();
   bookForm.reset();
   addBook.style.display = "block";
