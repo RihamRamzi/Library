@@ -141,10 +141,27 @@ label {
 #R {
   overflow: hidden;
 }
-#status,
+#readC,
 #read,
-#notRead {
+#notRead,
+#status {
   cursor: pointer;
+}
+#readC {
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  width: 50%;
+  align-self: center;
+  background-color: rgb(221, 126, 126);
+}
+#readCY {
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  width: 50%;
+  align-self: center;
+  background-color: rgb(137, 221, 126);
 }
 #read::after {
   content: "✔️";

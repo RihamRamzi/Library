@@ -53,7 +53,7 @@ function displayBook() {
     read.textContent = `Read:`;
     read.id = "R";
     const statusSpan = document.createElement("span");
-    if (book.checked == true) {
+    if (book.checked == "YES") {
       statusSpan.textContent = " Yes";
       statusSpan.id = "read";
     } else {
@@ -64,11 +64,11 @@ function displayBook() {
       if (statusSpan.textContent == " Yes") {
         statusSpan.textContent = " No";
         statusSpan.id = "notRead";
-        book.checked = false;
+        book.checked = "NO";
       } else {
         statusSpan.textContent = " Yes";
         statusSpan.id = "read";
-        book.checked = true;
+        book.checked = "YES";
       }
     });
 
@@ -99,6 +99,8 @@ function displayBook() {
 addBook.addEventListener("click", () => {
   form.style.display = "flex";
   addBook.style.display = "none";
+  readC.id = "readC";
+  readC.textContent = "NO";
 });
 
 // create book function
@@ -107,12 +109,22 @@ bookForm.addEventListener("submit", (event) => {
   const bookTitle = title.value;
   const bookAuthor = author.value;
   const bookPages = pages.value;
-  const checked = readC.checked;
-  console.log(checked);
+  const checked = readC.textContent;
 
   addBookToLibrary(bookTitle, bookAuthor, bookPages, checked);
   displayBook();
   bookForm.reset();
   addBook.style.display = "block";
   form.style.display = "none";
+});
+
+// button read
+readC.addEventListener("click", () => {
+  if (readC.textContent == "NO") {
+    readC.textContent = "YES";
+    readC.id = "readCY";
+  } else {
+    readC.textContent = "NO";
+    readC.id = "readC";
+  }
 });
