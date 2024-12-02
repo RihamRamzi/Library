@@ -28,18 +28,16 @@ body {
 }
 /* form */
 .form {
-  border-radius: 10px;
   border-bottom-right-radius: 100px;
   border-bottom-left-radius: 100px;
 
   height: 50%;
   width: 80%;
-  border: 2px solid;
   display: none;
   justify-content: center;
-  box-shadow: inset 0px 1px 15px 9px;
 }
 form {
+  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.192);
   width: 63%;
   height: 100%;
