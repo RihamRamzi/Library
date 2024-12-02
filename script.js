@@ -1,3 +1,15 @@
+const bookShelf = document.querySelector(".bookShelf");
+const addBook = document.querySelector("#addBook");
+const form = document.querySelector(".form");
+// form input
+const title = document.querySelector("#title");
+const author = document.querySelector("#author");
+const pages = document.querySelector("#pages");
+// create Btn
+const createBook = document.querySelector("#add");
+// form
+const bookForm = document.querySelector("#form");
+
 const myLibrary = [];
 
 function Book(title, author, pages) {
@@ -14,19 +26,10 @@ function addBookToLibrary(title, author, pages) {
   myLibrary.push(book);
 }
 
-const bookShelf = document.querySelector(".bookShelf");
-const addBook = document.querySelector("#addBook");
-const form = document.querySelector(".form");
-// form input
-const title = document.querySelector("#title");
-const author = document.querySelector("#author");
-const pages = document.querySelector("#pages");
-// create Btn
-const createBook = document.querySelector("#add");
-
 function displayBook() {
   bookShelf.textContent = "";
-  for (let book of myLibrary) {
+
+  myLibrary.forEach((book) => {
     // created book
     const bookCover = document.createElement("div");
     bookCover.classList.add("book");
@@ -63,6 +66,12 @@ function displayBook() {
     delBtn.textContent = `Remove`;
     delBtn.classList.add("Btn");
     delBtn.addEventListener("click", () => {
+      let bookIndex = myLibrary.findIndex(
+        (book) => book.title === title.textContent
+      );
+      if (bookIndex !== -1) {
+        myLibrary.splice(bookIndex, 1);
+      }
       bookCover.remove();
     });
 
@@ -73,13 +82,13 @@ function displayBook() {
     bookCover.appendChild(read);
     bookCover.appendChild(delBtn);
     bookShelf.appendChild(bookCover);
-  }
+  });
 }
 
-// addBook.addEventListener("click", () => {
-//   form.style.display = "flex";
-//   addBook.style.display = "none";
-// });
+addBook.addEventListener("click", () => {
+  form.style.display = "flex";
+  addBook.style.display = "none";
+});
 
 // create book function
 createBook.addEventListener("click", (event) => {
@@ -90,4 +99,7 @@ createBook.addEventListener("click", (event) => {
 
   addBookToLibrary(bookTitle, bookAuthor, bookPages);
   displayBook();
+  bookForm.reset();
+  addBook.style.display = "block";
+  form.style.display = "none";
 });

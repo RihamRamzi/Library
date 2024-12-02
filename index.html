@@ -9,12 +9,24 @@
   <body>
     <button class="Btn" id="addBook">ADD BOOK</button>
     <div class="form">
-      <form action="">
+      <form action="" id="form">
         <div class="left">
           <label for="title">TITLE</label>
-          <input type="text" id="title" name="title" placeholder="Title" />
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Title"
+            required
+          />
           <label for="author">AUTHOR</label>
-          <input type="text" id="author" name="author" placeholder="Author" />
+          <input
+            type="text"
+            id="author"
+            name="author"
+            placeholder="Author"
+            required
+          />
           <label for="pages">PAGES</label>
           <input
             type="number"
@@ -28,15 +40,7 @@
         </div>
       </form>
     </div>
-    <div class="bookShelf">
-      <div class="book">
-        <span id="T">HOBIIT</span>
-        <span id="A">By someone</span>
-        <span id="P">Pages: 100</span>
-        <span id="R">Read: <span id="status">Click</span></span>
-        <button class="Btn">Remove</button>
-      </div>
-    </div>
+    <div class="bookShelf"></div>
     <script src="script.js"></script>
   </body>
 </html>

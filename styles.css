@@ -21,7 +21,6 @@ body {
   font-size: 30px;
   font-weight: 900;
   margin-bottom: 20px;
-  display: none;
 }
 #addBook:hover {
   background-color: #436ad450;
@@ -35,7 +34,7 @@ body {
   height: 50%;
   width: 80%;
   border: 2px solid;
-  display: flex;
+  display: none;
   justify-content: center;
   box-shadow: inset 0px 1px 15px 9px;
 }
@@ -69,6 +68,7 @@ form {
   font-size: 1em;
   writing-mode: vertical-lr;
   text-orientation: upright;
+  margin: 0;
 }
 
 input {
@@ -115,7 +115,7 @@ label {
 }
 .book {
   width: 150px;
-  height: 200px;
+  height: 250px;
   border-radius: 15px;
   color: #535252;
   padding: 15px;
@@ -123,6 +123,10 @@ label {
   flex-direction: column;
   background-color: #a7a5a3;
   box-shadow: inset 6px 0px 0px 0px #1d4fd8b2;
+  white-space: normal; /* Allow text to wrap */
+  overflow-wrap: break-word; /* Break long words */
+  word-wrap: break-word; /* Legacy support */
+  overflow: hidden;
 }
 #T {
   font-weight: 700;
